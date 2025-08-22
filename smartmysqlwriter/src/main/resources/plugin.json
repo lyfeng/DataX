@@ -1,0 +1,6 @@
+{
+    "name": "smartmysqlwriter",
+    "class": "com.alibaba.datax.plugin.writer.smartmysqlwriter.SmartMysqlWriter",
+    "description": "Use smartmysqlwriter to write data into mysql with custom update fields.",
+    "developer": "alibaba"
+}
