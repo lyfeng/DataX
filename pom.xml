@@ -85,6 +85,7 @@
         <module>dorisreader</module>
         <!-- writer -->
         <module>mysqlwriter</module>
+        <module>smartmysqlwriter</module>
         <module>starrockswriter</module>
         <module>drdswriter</module>
         <module>databendwriter</module>

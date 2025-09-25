@@ -1,0 +1,46 @@
+{
+    "job": {
+        "setting": {
+            "speed": {
+                "channel": 3
+            }
+        },
+        "content": [
+            {
+                "reader": {
+                    "name": "streamreader",
+                    "parameter": {
+                        "column": [
+                            {
+                                "value": "device001",
+                                "type": "string"
+                            },
+                            {
+                                "value": "85.6",
+                                "type": "string"
+                            }
+                        ],
+                        "sliceRecordCount": 10
+                    }
+                },
+                "writer": {
+                    "name": "smartmysqlwriter",
+                    "parameter": {
+                        "username": "${mysql_username}",
+                        "password": "${mysql_password}",
+                        "column": ["device_id", "pe"],
+                        "connection": [
+                            {
+                                "table": ["device_info_tmp"],
+                                "jdbcUrl": "jdbc:goldendb://134.84.61.13:8880/sd_iot?useUnicode=true&characterEncoding=utf-8"
+                            }
+                        ],
+                        "writeMode": "update",
+                        "updateKey": ["device_id"],
+                        "batchSize": 1000
+                    }
+                }
+            }
+        ]
+    }
+}
